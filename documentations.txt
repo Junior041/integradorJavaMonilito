@@ -1,0 +1,91 @@
+/vehicle
+	@Post
+		form-data{
+                Long categoryId,
+                String model,
+                String price,
+                String description,
+                String color,
+                String hp,
+                String doors,
+                Long storeId,
+                Long brandId,
+                List<Photo> photos
+		}
+
+	@Get("/")
+		All Vehicles
+	@Get("/store/storeId")
+		Vehicles by store
+--------------------------------------------------
+/auth/login
+	@Post("/register")
+		body{
+		    "name": "Junior Store",
+		    "responsiblePerson": "Ismael Ajunior",
+		    "cnpj": "888885522",
+		    "username": "123",
+		    "password": "123",
+		    "role": "ADMIN"
+		}
+	@Post("/login")
+		body{
+			"username": "",
+			"password": ""
+		}
+--------------------------------------------------
+/brand
+	@Post
+		body{
+			"brand": ""
+		}
+	@Get
+		All brands
+--------------------------------------------------
+/category
+	@Post
+		body{
+			"category": ""
+		}
+
+	@Get
+		All category
+--------------------------------------------------
+/portal-access
+	@Post
+		body{
+			String storePasswordPortal,
+			Long storeId,
+			Long portalId
+		}
+
+	@Get("/store/{storeId}")
+		Portal access store
+--------------------------------------------------
+/portal
+	@Post
+		body{
+			String name,
+			String urlPortal,
+			String urlApi,
+			String description,
+			String phone,
+			String email
+		}
+	@Get
+		All portals
+--------------------------------------------------
+/store
+	@Get("/storeId")
+		Find store by id
+--------------------------------------------------
+/translations-portal
+	@Post
+		body{
+			String termPortal,
+			String termIntegrator,
+			Long portalId
+		}
+	@Get("/portal/{portalId}")
+		Find by Portal
+--------------------------------------------------
